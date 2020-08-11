@@ -10,6 +10,10 @@ let API_KEY = "AIzaSyCqzB5x8CXCWPFvA9P3eC0-ZkRyh8C2rvY";
 class App extends React.Component {
 	state = { videos: [], selectedVideo: null };
 
+	componentDidMount() {
+		this.onSearchTermSubmit("dogs");
+	}
+
 	// Callback function passed down to search bar component for receiving search term
 	onSearchTermSubmit = (term) => {
 		youtube
@@ -23,7 +27,10 @@ class App extends React.Component {
 				},
 			})
 			.then((res) => {
-				this.setState({ videos: res.data.items });
+				this.setState({
+					videos: res.data.items,
+					selectedVideo: res.data.items[0],
+				});
 			});
 	};
 
