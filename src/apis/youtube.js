@@ -1,1 +1,5 @@
-let KEY = "AIzaSyD6L34MQe692g1s5BvXPSjkoDGeLyKLtGc";
+import axios from "axios";
+
+export default axios.create({
+	baseURL: "https://www.googleapis.com/youtube/v3",
+});
