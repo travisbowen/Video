@@ -4,12 +4,14 @@ import VideoItem from "./VideoItem";
 const VideoList = (props) => {
 	const lists = props.videos.map((video) => {
 		return (
-			<div className='ui relaxed divided list'>
-				<VideoItem onVideoSelected={props.onVideoSelected} video={video} />
-			</div>
+			<VideoItem
+				key={video.id.videoId}
+				onVideoSelected={props.onVideoSelected}
+				video={video}
+			/>
 		);
 	});
-	return <div>{lists}</div>;
+	return <div className='ui relaxed divided list'>{lists}</div>;
 };
 
 export default VideoList;

@@ -7,6 +7,7 @@ const VideoItem = (props) => {
 			className='video-item item'
 			onClick={() => props.onVideoSelected(props.video)}>
 			<img
+				alt='props.video.snippet.title'
 				className='ui image'
 				src={props.video.snippet.thumbnails.medium.url}
 			/>

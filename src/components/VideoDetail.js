@@ -9,6 +9,7 @@ const VideoDetail = (props) => {
 		<div>
 			<div className='ui embed'>
 				<iframe
+					title='video player'
 					src={`https://www.youtube.com/embed/${props.video.id.videoId}`}
 				/>
 			</div>
