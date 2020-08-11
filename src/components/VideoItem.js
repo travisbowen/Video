@@ -2,9 +2,10 @@ import React from "react";
 import "./VideoItem.css";
 
 const VideoItem = (props) => {
-	console.log(props.video);
 	return (
-		<div className='video-item item'>
+		<div
+			className='video-item item'
+			onClick={() => props.onVideoSelected(props.video)}>
 			<img
 				className='ui image'
 				src={props.video.snippet.thumbnails.medium.url}
